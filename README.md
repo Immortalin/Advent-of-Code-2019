@@ -1,3 +1,3 @@
 # Advent of Code 2019
-- In Rust
+- `cargo run --bin day_n` where n is the day to run
 
