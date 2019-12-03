@@ -25,13 +25,14 @@ fn calc_single_fuel(mass: f64) -> f64 {
 }
 
 // Calculates and sums up total fuel use
-fn calc_fuel(sum: f64, element: &&str) -> f64 {
+fn calc_fuel(sum: f64, element: &str) -> f64 {
   calc_single_fuel(element.parse::<i64>().unwrap() as f64) + sum
 }
+
 fn main() {
-  let contents = fs::read_to_string("input.txt").unwrap();
+  let contents = fs::read_to_string("./day_1/input.txt").unwrap();
   let masses: Vec<&str> = contents.split("\n").collect();
-  let total: f64 = masses.iter().fold(0.0, calc_fuel);
+  let total: f64 = masses.into_iter().fold(0.0, calc_fuel);
   println!("{:?}", total as i64);
 }
 
